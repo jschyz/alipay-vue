@@ -14,8 +14,9 @@ ESLint是一个QA工具，用来避免低级错误和统一代码的风格。
 
 ESLint文档 [官网](http://eslint.org/) [中文](https://github.com/Jocs/ESLint_docs)
 
-````bash
 ## 项目目录结构
+
+````bash
 src                           // 源文件目录，`npm run dev`阶段会监听此目录下的文件变动
 │
 ├── assets                    // 存放 样式、字体文件和图片等 公共静态资源
