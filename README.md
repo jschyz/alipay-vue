@@ -1,8 +1,23 @@
-## Alipay hybrid 约定
+alipay vue
+========
+
+蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
+
+## Promise
 
 * [小程序介绍](https://myapp.alipay.com/hybrid/index.html)
 * `npm start` 用来开启server，必须为`8989`端口
 * `npm run build` 用来构建，构建后文件放在`dist`目录下
+* 依赖 `Webpack2` `Vue2`
+
+## High Quality Resources
+
+* [Mint UI](http://mint-ui.github.io/docs/#!/zh-cn2) 饿了么团队推出精品移动端组件，酌情考虑引用部分组件。详见alipay小程序native [jsApi](https://myapp.alipay.com/jsapi/ui/toast.html)实现
+
+* [Vue Lazyload](https://github.com/hilongjw/vue-lazyload) 图片懒加载
+
+* 注意
+建议不要引用 [vue-router](https://github.com/vuejs/vue-router) 插件，详见[窗口控制技巧](https://myapp.alipay.com/cases/nav-skill.html)
 
 
 ## 项目目录结构
@@ -45,16 +60,17 @@ src                           // 源文件目录，`npm run dev`阶段会监听�
 └── vuex                      // [Vuex应用结构](https://github.com/vuejs/vuex/blob/1.0/docs/zh-cn/structure.md)
 ````
 
-## 优质 Vue Component
+## Other
 
-* [Mint UI](http://mint-ui.github.io/docs/#!/zh-cn2) 饿了么团队推出精品移动端组件，酌情考虑引用部分组件。详见alipay小程序native [jsApi](https://myapp.alipay.com/jsapi/ui/toast.html)实现
+### Webpack
 
-* [Vue Lazyload](https://github.com/hilongjw/vue-lazyload) 图片懒加载
+Webpack是将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
 
-#### 注意
-建议不要引用 [vue-router](https://github.com/vuejs/vue-router) 插件，详见[窗口控制技巧](https://myapp.alipay.com/cases/nav-skill.html)
+基于vue功能齐全的脚手架[Vue-templates](https://github.com/vuejs-templates/webpack)
 
-## Babel
+Webpack文档 [官网](https://webpack.js.org/) [中文](http://webpackdoc.com/)
+
+### Babel
 
 Babel是下一代 JavaScript 语法的编译器。
 
@@ -62,7 +78,7 @@ Babel是下一代 JavaScript 语法的编译器。
 
 Babel文档 [官网](http://babeljs.io/) [中文](http://babeljs.cn/)
 
-## Eslint
+### Eslint
 
 ESLint是一个QA工具，用来避免低级错误和统一代码的风格。
 
