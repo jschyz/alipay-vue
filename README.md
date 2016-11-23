@@ -1,18 +1,9 @@
-## Alipay app 示例
+## Alipay hybrid 约定
 
-可以使用任何框架构建，但必须遵守以下约定：
-
+* [小程序介绍](https://myapp.alipay.com/hybrid/index.html)
 * `npm start` 用来开启server，必须为`8989`端口
 * `npm run build` 用来构建，构建后文件放在`dist`目录下
 
-
-## Eslint
-
-ESLint是一个QA工具，用来避免低级错误和统一代码的风格。
-
-代码风格规范请使用 [JavaScript Standard Style](https://github.com/feross/standard)
-
-ESLint文档 [官网](http://eslint.org/) [中文](https://github.com/Jocs/ESLint_docs)
 
 ## 项目目录结构
 
@@ -50,5 +41,31 @@ src                           // 源文件目录，`npm run dev`阶段会监听�
 ├── 下面目录根据实际情况酌情添加 ──
 ├── filters                   // 过滤器
 ├── directives                // 指令
-└── services                  // api服务层
+├── services                  // api服务层
+└── vuex                      // [Vuex应用结构](https://github.com/vuejs/vuex/blob/1.0/docs/zh-cn/structure.md)
 ````
+
+## 优质 Vue Component
+
+* [Mint UI](http://mint-ui.github.io/docs/#!/zh-cn2) 饿了么团队推出精品移动端组件，酌情考虑引用部分组件。详见alipay小程序native [jsApi](https://myapp.alipay.com/jsapi/ui/toast.html)实现
+
+* [Vue Lazyload](https://github.com/hilongjw/vue-lazyload) 图片懒加载
+
+#### 注意
+建议不要引用 [vue-router](https://github.com/vuejs/vue-router) 插件，详见[窗口控制技巧](https://myapp.alipay.com/cases/nav-skill.html)
+
+## Babel
+
+Babel是下一代 JavaScript 语法的编译器。
+
+入门教程请参考 阮一峰的[Babel 入门教程](http://www.ruanyifeng.com/blog/2016/01/babel.html)
+
+Babel文档 [官网](http://babeljs.io/) [中文](http://babeljs.cn/)
+
+## Eslint
+
+ESLint是一个QA工具，用来避免低级错误和统一代码的风格。
+
+代码风格规范请使用 [JavaScript Standard Style](https://github.com/feross/standard)
+
+ESLint文档 [官网](http://eslint.org/) [中文](https://github.com/Jocs/ESLint_docs)
