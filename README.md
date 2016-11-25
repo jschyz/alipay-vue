@@ -9,6 +9,7 @@ alipay vue
 * `npm start` 用来开启server，必须为`8989`端口
 * `npm run build` 用来构建，构建后文件放在`dist`目录下
 * 依赖 `Webpack2` `Vue2`
+* 可维护 易扩展 效率高
 
 ## High Quality Resources
 
