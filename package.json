@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "webpack --config build/webpack.base.conf.js"
+    "start": "webpack-dev-server --hot --inline --config build/webpack.dev.conf.js",
+    "dev": "webpack --progress --config build/webpack.dev.conf.js"
   },
   "dependencies": {
     "mint-ui": "^2.0.5",
@@ -26,6 +27,8 @@
     "vue-loader": "^10.0.1",
     "vue-template-compiler": "^2.1.3",
     "vue-template-es2015-compiler": "^1.3.0",
-    "webpack": "2.1.0-beta.27"
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^0.18.0"
   }
 }

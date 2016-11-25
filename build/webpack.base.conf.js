@@ -1,15 +1,51 @@
+const fs = require('fs')
 const path = require('path')
-const HtmlwebpackPlugin = require('html-webpack-plugin')
+const config = require('./config')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// 定义了一些文件夹的路径
-var ROOT_PATH = path.resolve(__dirname, '../')
+let entry = {}
+let htmlPlugin = []
+let invalidEntry = []
+
+fs.readdirSync(config.entry).forEach(name => {
+  let dirpath = path.resolve(config.entry, name)
+
+  // 过滤 .DS_Store 非目录文件
+  if (!fs.statSync(dirpath).isDirectory()) return;
+
+  // 同时必须满足 index.html 跟 main.js 文件
+  if (!(fs.existsSync(path.resolve(dirpath, 'index.html')) && fs.existsSync(path.resolve(dirpath, 'main.js')))) {
+    invalidEntry.push(name)
+    return
+  }
+
+  // 多脚本入口
+  entry[name] = dirpath + '/main.js'
+  // 多页面入口
+  htmlPlugin.push(
+    new HtmlWebpackPlugin({
+      chunks: [name],
+      filename: `${name}.html`,
+      template: `src/pages/${name}/index.html`
+    })
+  )
+})
+
+// 输出无效入口路劲
+if (invalidEntry.length) {
+  console.log(
+    '  Tip:\n' +
+    '  下列目录必须包含 index.html、main.js 文件\n  ' +
+    invalidEntry.join(`\n  `) +
+    '\n'
+  )
+}
 
 module.exports = {
-  // foreach
-  entry: './src/pages/index/main.js',
+  entry,
   output: {
-    path: './dist',
-    filename: 'bundle.js',
+    path: config.output,
+    filename: '[name].js',
     publicPath: '/'
   },
   module: {
@@ -32,13 +68,5 @@ module.exports = {
       }
     ]
   },
-  // 代码合并以后，用于排错和定位
-  // 不要使用 eval-source-map，运行性能低
-  devtool: 'source-map',
-  plugins: [
-    //会自动生成一个html文件
-    new HtmlwebpackPlugin({
-      template: 'src/pages/index/index.html'
-    })
-  ]
+  plugins: htmlPlugin
 }
