@@ -17,7 +17,9 @@ module.exports = {
     'browser': true
   },
   // http://eslint.org/docs/user-guide/configuring#specifying-globals
-  globals: {},
+  globals: {
+    'Vue': true
+  },
   // add your custom rules here
   // http://eslint.org/docs/user-guide/configuring#configuring-rules
   rules: {

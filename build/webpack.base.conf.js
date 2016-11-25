@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
-const config = require('./config')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const config = require('./config')
 
 let entry = {}
 let htmlPlugin = []
@@ -65,6 +66,21 @@ module.exports = {
         test: /.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        query: {
+          name: '[name].[ext]?[hash]'
+        }
       }
     ]
   },

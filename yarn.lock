@@ -343,6 +343,10 @@ babel-plugin-check-es2015-constants@^6.3.13:
   dependencies:
     babel-runtime "^6.0.0"
 
+babel-plugin-component:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-component/-/babel-plugin-component-0.6.0.tgz#a2e27361c8848919e85b5e3f246c0f6194710fa3"
+
 babel-plugin-transform-es2015-arrow-functions@^6.3.13:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-arrow-functions/-/babel-plugin-transform-es2015-arrow-functions-6.8.0.tgz#5b63afc3181bdc9a8c4d481b5a4f3f7d7fef3d9d"
@@ -1436,6 +1440,10 @@ es6-map@^0.1.3:
     es6-set "~0.1.3"
     es6-symbol "~3.1.0"
     event-emitter "~0.3.4"
+
+es6-object-assign@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.0.3.tgz#40a192e0fda5ee44ee8cf6f5b5d9b47cd0f69b14"
 
 es6-promise@^3.1.2:
   version "3.3.1"
@@ -3729,13 +3737,21 @@ sha.js@^2.3.6:
   dependencies:
     inherits "^2.0.1"
 
-shelljs@^0.7.5:
+shelljs@^0.7.3, shelljs@^0.7.5:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.5.tgz#2eef7a50a21e1ccf37da00df767ec69e30ad0675"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
     rechoir "^0.6.2"
+
+shx:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/shx/-/shx-0.2.1.tgz#d5f8c536e77e6b6ec83bd66f746ab300f1775ecf"
+  dependencies:
+    es6-object-assign "^1.0.3"
+    minimist "^1.2.0"
+    shelljs "^0.7.3"
 
 sigmund@^1.0.1:
   version "1.0.1"
@@ -4168,10 +4184,6 @@ vue-hot-reload-api@^2.0.1:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.6.tgz#817d4bfb30f55428aa1012d029499e07f3147d21"
 
-vue-lazyload:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-0.9.2.tgz#ea50d76c53fa5a0fe1f76eb7f35bb19da2d79d62"
-
 vue-lazyload@^0.8.0:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-0.8.3.tgz#7118859eb2e6ed69ee132a80da5507671dc88640"
@@ -4214,7 +4226,7 @@ vue-template-compiler:
     de-indent "^1.0.2"
     he "^1.1.0"
 
-vue-template-es2015-compiler, vue-template-es2015-compiler@^1.2.2:
+vue-template-es2015-compiler@^1.2.2:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.3.0.tgz#4a0f2a0bbef8b5731f78add8263cd86fe4f643ca"
 
