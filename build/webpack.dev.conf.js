@@ -12,7 +12,7 @@ Object.keys(baseWebpackConfig.entry).forEach((key) => {
     new HtmlWebpackPlugin({
       chunks: [key],
       filename: `${key}.html`,
-      template: path.resolve(config.rule.input, key, config.rule.template)
+      template: path.join(config.rule.input, key, config.rule.template)
     })
   )
 })

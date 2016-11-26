@@ -7,22 +7,20 @@ let entry = {}
 let htmlPlugin = []
 let invalidEntry = []
 
-fs.readdirSync(config.rule.input).forEach(name => {
-  let dirpath = path.resolve(config.rule.input, name)
+fs.readdirSync(config.rule.input).forEach(folder => {
+  let dirpath  = path.resolve(config.rule.input, folder)
+  let template = path.resolve(dirpath, config.rule.template)
+  let script   = path.resolve(dirpath, config.rule.script)
 
   // 过滤 .DS_Store 非目录文件
   if (!fs.statSync(dirpath).isDirectory()) return
 
-  let template = path.resolve(dirpath, config.rule.template)
-  let script = path.resolve(dirpath, config.rule.script)
   // 同时必须满足 index.html 跟 main.js 文件
   if (!(fs.existsSync(template) &&
     fs.existsSync(script))) {
-    // 收集无效路劲
-    invalidEntry.push(name)
+    invalidEntry.push(folder)   // 收集无效路劲
   } else {
-    // 多脚本入口
-    entry[name] = script
+    entry[folder] = script      // 多脚本入口
   }
 })
 

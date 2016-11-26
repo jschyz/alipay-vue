@@ -9,9 +9,9 @@ module.exports = {
    */
   rule: {
     template: 'index.html',
-    script: 'main.js',
-    input: path.resolve(__dirname, '../src/pages'),
-    output: path.resolve(__dirname, '../dist')
+    script  : 'main.js',
+    input   : 'src/pages/',
+    output  : 'dist/'
   },
   build: {
     env: '"production"',

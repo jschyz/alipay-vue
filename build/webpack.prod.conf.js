@@ -1,3 +1,4 @@
+const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -10,7 +11,7 @@ Object.keys(baseWebpackConfig.entry).forEach((key) => {
     new HtmlWebpackPlugin({
       chunks: ['vendor', key],
       filename: `${key}.html`,
-      template: `src/pages/${key}/index.html`
+      template: path.join(config.rule.input, key, config.rule.template)
     })
   )
 })
