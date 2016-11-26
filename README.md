@@ -13,6 +13,8 @@ alipay vue
 
 ## High Quality Resources
 
+* [flex.css](https://github.com/lzxb/flex.css) Flex 布局
+
 * [Mint UI](http://mint-ui.github.io/docs/#!/zh-cn2) 饿了么团队推出精品移动端组件，酌情考虑引用部分组件。详见alipay小程序native [jsApi](https://myapp.alipay.com/jsapi/ui/toast.html)实现
 
 * [Vue Lazyload](https://github.com/hilongjw/vue-lazyload) 图片懒加载
