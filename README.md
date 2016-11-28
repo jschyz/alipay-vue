@@ -19,6 +19,8 @@ alipay vue
 
 * [Vue Lazyload](https://github.com/hilongjw/vue-lazyload) 图片懒加载
 
+* [awesome-vue](https://github.com/vuejs/awesome-vue) Vue资源社区
+
 * 注意
 建议不要引用 [vue-router](https://github.com/vuejs/vue-router) 插件，详见[窗口控制技巧](https://myapp.alipay.com/cases/nav-skill.html)
 
