@@ -2,7 +2,7 @@
   "scripts": {
     "build": "npm run clean && webpack --progress --config build/webpack.prod.conf.js",
     "clean": "shx rm -rf ./dist",
-    "start": "webpack-dev-server --hot --inline --config build/webpack.dev.conf.js"
+    "start": "webpack-dev-server --hot --inline --host 0.0.0.0 --config build/webpack.dev.conf.js"
   },
   "dependencies": {
     "mint-ui": "^2.0.5",
