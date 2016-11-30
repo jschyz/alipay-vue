@@ -24,6 +24,13 @@ alipay vue
 * 注意
 建议不要引用 [vue-router](https://github.com/vuejs/vue-router) 插件，详见[窗口控制技巧](https://myapp.alipay.com/cases/nav-skill.html)
 
+## component communication
+
+* [event hub](https://cn.vuejs.org/v2/guide/migration.html#dispatch-和-broadcast-替换) 简易组件通信方案
+
+* [Vuex](https://vuex.vuejs.org/zh-cn/) 复杂组件通信方案
+
+* [vue 通信方案总结参考阅读](https://segmentfault.com/a/1190000007131605)
 
 ## 项目目录结构
 
