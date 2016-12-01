@@ -3,14 +3,14 @@ const path = require('path')
 const webpack = require('webpack')
 const config = require('./config')
 
-let entry = {}
-let htmlPlugin = []
-let invalidEntry = []
+var entry = {}
+var htmlPlugin = []
+var invalidEntry = []
 
 fs.readdirSync(config.rule.input).forEach(folder => {
-  let dirpath  = path.resolve(config.rule.input, folder)
-  let template = path.resolve(dirpath, config.rule.template)
-  let script   = path.resolve(dirpath, config.rule.script)
+  var dirpath  = path.resolve(config.rule.input, folder)
+  var template = path.resolve(dirpath, config.rule.template)
+  var script   = path.resolve(dirpath, config.rule.script)
 
   // 过滤 .DS_Store 非目录文件
   if (!fs.statSync(dirpath).isDirectory()) return
@@ -41,35 +41,39 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
+  resolveLoader: {
+    // https://webpack.js.org/configuration/resolve/#resolveloader-moduleextensions
+    moduleExtensions: ['-loader']
+  },
   module: {
     rules: [
       // https://github.com/vuejs/vue-loader/blob/master/docs/en/workflow/linting.md
       {
         enforce: 'pre',
         test: /.(vue|js)$/,
-        loader: 'eslint-loader',
+        loader: 'eslint',
         exclude: /node_modules/
       },
       {
         test: /.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue'
       },
       {
         test: /.js$/,
-        loader: 'babel-loader',
+        loader: 'babel',
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style!css'
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader'
+        loader: 'file'
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
+        loader: 'file',
         query: {
           name: '[name].[ext]?[hash]'
         }

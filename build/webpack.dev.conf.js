@@ -1,11 +1,12 @@
 const path = require('path')
 const merge = require('webpack-merge')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./config')
 const baseWebpackConfig = require('./webpack.base.conf')
 
 
-let htmlPlugin = []
+var htmlPlugin = []
 // 多页面入口
 Object.keys(baseWebpackConfig.entry).forEach((key) => {
   htmlPlugin.push(
@@ -27,6 +28,15 @@ module.exports = merge(baseWebpackConfig, {
     progress: true,
   },
   plugins: [
-
+    new webpack.LoaderOptionsPlugin({
+      vue: {
+        // use custom postcss plugins
+        postcss: [
+          require('autoprefixer')({
+            browsers: ['last 2 versions']
+          })
+        ]
+      }
+    })
   ].concat(htmlPlugin)
 })

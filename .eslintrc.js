@@ -18,7 +18,10 @@ module.exports = {
   },
   // http://eslint.org/docs/user-guide/configuring#specifying-globals
   globals: {
-    'Vue': true
+    'Vue': true,
+    'describe': true,
+    'it': true,
+    'expect':true
   },
   // add your custom rules here
   // http://eslint.org/docs/user-guide/configuring#configuring-rules

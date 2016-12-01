@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./config')
 const baseWebpackConfig = require('./webpack.base.conf')
 
-let htmlPlugin = []
+var htmlPlugin = []
 // 多页面入口
 Object.keys(baseWebpackConfig.entry).forEach((key) => {
   htmlPlugin.push(
