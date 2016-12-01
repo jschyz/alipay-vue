@@ -7,12 +7,21 @@
         {{val}}
         </tab-item>
     </tabbar>
+
+    <h1>Shopping Cart Example</h1>
+    <hr>
+    <h2>Products</h2>
+    <product-list></product-list>
+    <hr>
+    <cart></cart>
   </div>
 </template>
 
 <script>
   import Tabbar from '../../components/tabbar/'
   import TabItem from '../../components/tab-item/'
+  import ProductList from './ProductList.vue'
+  import Cart from './Cart.vue'
 
   export default {
     name: 'app',
@@ -23,7 +32,9 @@
     },
     components: {
       Tabbar,
-      TabItem
+      TabItem,
+      ProductList,
+      Cart
     }
   }
 </script>
