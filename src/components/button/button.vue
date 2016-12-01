@@ -21,7 +21,7 @@
  * 原因：减少DOM节点
  *
  * @example
- * <list header="表头文字" footer="表尾文字"></list>
+ * <list header="表头文字" footer="表尾文字">
  */
 export default {
   name: 'list',

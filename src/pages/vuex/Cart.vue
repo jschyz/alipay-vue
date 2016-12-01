@@ -1,36 +1,44 @@
 <template>
-  <div class="cart">
-    <h2>Your Cart</h2>
-    <p v-show="!products.length"><i>Please add some products to cart.</i></p>
-    <ul>
-      <li v-for="p in products">
-        {{ p.title }} - {{ p.price }} x {{ p.quantity }}
-      </li>
-    </ul>
-    <p>Total: {{ total }}</p>
-    <p><button :disabled="!products.length" @click="checkout(products)">Checkout</button></p>
+  <list header="Cart">
+    <list-item
+      v-for="p in products"
+      :title="p.title"
+      :label="p.quantity"
+      :value="p.price * p.quantity | currency"></list-item>
+    <list-item title="- Total -" :value="total | currency"></list-item>
+
+    <p>
+      <button :disabled="!products.length" @click="checkout(products)">Checkout</button>
+    </p>
     <p v-show="checkoutStatus">Checkout {{ checkoutStatus }}.</p>
-  </div>
+  </list>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-export default {
-  computed: {
-    ...mapGetters({
-      products: 'cartProducts',
-      checkoutStatus: 'checkoutStatus'
-    }),
-    total () {
-      return this.products.reduce((total, p) => {
-        return total + p.price * p.quantity
-      }, 0)
-    }
-  },
-  methods: {
-    checkout (products) {
-      this.$store.dispatch('checkout', products)
+  import List from '../../components/list/'
+  import ListItem from '../../components/list-item/'
+  import { mapGetters } from 'vuex'
+
+  export default {
+    components: {
+      List,
+      ListItem
+    },
+    computed: {
+      ...mapGetters({
+        products: 'cartProducts',
+        checkoutStatus: 'checkoutStatus'
+      }),
+      total () {
+        return this.products.reduce((total, p) => {
+          return total + p.price * p.quantity
+        }, 0)
+      }
+    },
+    methods: {
+      checkout (products) {
+        this.$store.dispatch('checkout', products)
+      }
     }
   }
-}
 </script>

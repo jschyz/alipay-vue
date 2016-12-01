@@ -3,6 +3,9 @@ alipay vue
 
 蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
 
+运行截图
+![-1](https://cloud.githubusercontent.com/assets/3281438/20793693/4126474e-b803-11e6-8c85-388f4f8d2985.png)
+
 ## Promise
 
 * [小程序介绍](https://myapp.alipay.com/hybrid/index.html)

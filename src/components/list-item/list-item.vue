@@ -25,9 +25,10 @@ function cleanPath (path) {
   return path.replace(/\/\//g, '/')
 }
 /**
- * cell
- * @module components/cell
- * @desc 单元格
+ * list-item
+ * @module components/list-item
+ * @desc 单元格，依赖 list
+ *
  * @param {string} [to] - 跳转链接
  * @param {string} [title] - 标题
  * @param {string} [label] - 备注信息
@@ -38,14 +39,14 @@ function cleanPath (path) {
  * @param {slot} [icon right] - 右侧图标
  *
  * @example
- * <cell title="标题文字" is-link value="描述文字"></cell>
+ * <list-item title="标题文字" is-link value="描述文字"></list-item>
  */
 export default {
   name: 'list-item',
   props: {
     to: String,
-    title: String,
-    label: String,
+    title: [String, Number],
+    label: [String, Number],
     value: [String, Number],
     reddot: Boolean,
     isLink: Boolean
