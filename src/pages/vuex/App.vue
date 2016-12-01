@@ -1,13 +1,5 @@
 <template>
-  <div id="page-index">
-    <tabbar fixed v-model="selected">
-      <tab-item
-        :id="key"
-        v-for="(val, key) of ['推荐', '装饰', '卡通', '文字', '主题']">
-        {{val}}
-        </tab-item>
-    </tabbar>
-
+  <div id="page-vuex">
     <h1>Shopping Cart Example</h1>
     <hr>
     <h2>Products</h2>
@@ -18,8 +10,6 @@
 </template>
 
 <script>
-  import Tabbar from '../../components/tabbar/'
-  import TabItem from '../../components/tab-item/'
   import ProductList from './ProductList.vue'
   import Cart from './Cart.vue'
 
@@ -31,8 +21,6 @@
       }
     },
     components: {
-      Tabbar,
-      TabItem,
       ProductList,
       Cart
     }

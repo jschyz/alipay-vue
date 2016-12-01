@@ -46,7 +46,7 @@ export default {
     to: String,
     title: String,
     label: String,
-    value: String,
+    value: [String, Number],
     reddot: Boolean,
     isLink: Boolean
   },
@@ -76,7 +76,7 @@ export default {
       this.$router.push(this.href)
     },
     hasEmpty (value) {
-      return !(value === undefined || value.trim() === '')
+      return !(value === undefined || value.toString().trim() === '')
     }
   }
 }

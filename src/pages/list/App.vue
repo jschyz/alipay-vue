@@ -10,7 +10,7 @@
   <!--   图标+两行文字 http://am-team.github.io/antui/docs/#图标＋两行文字 -->
   <!--   消息类       http://am-team.github.io/antui/docs/#消息类 -->
   <!--   纯信息展示    http://am-team.github.io/antui/docs/#纯信息展示-->
-  <div id="page-list-item">
+  <div id="page-list">
     <list header="表头" footer="表尾">
       <list-item title="标题文字"></list-item>
       <list-item title="标题文字" value="说明文字"></list-item>
