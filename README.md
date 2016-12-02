@@ -1,10 +1,24 @@
 alipay vue
 ========
 
-蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
+> 蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
 
-运行截图
-![-1](https://cloud.githubusercontent.com/assets/3281438/20793693/4126474e-b803-11e6-8c85-388f4f8d2985.png)
+运行部分截图
+
+![-1](https://cloud.githubusercontent.com/assets/3281438/20826073/677ee108-b8a3-11e6-9083-63d776107186.jpg)
+
+## 使用方法
+
+```
+npm install
+```
+
+```
+npm run dev   # 开发模式
+npm run build # 构建文件
+```
+npm run dev 会启动一个 http server,
+打开网址  http://127.0.0.1:8080/ 进行开发调试，浏览器会自动刷新
 
 ## Promise
 
@@ -74,6 +88,18 @@ src                           // 源文件目录，`npm run dev`阶段会监听�
 ├── services                  // api服务层
 └── vuex                      // [Vuex应用结构](https://github.com/vuejs/vuex/blob/1.0/docs/zh-cn/structure.md)
 ````
+
+## 编码规范
+本脚手架使用 [standard](http://standardjs.com/rules.html) 编码风格。 默认 2 空格缩进，禁用分号，字符串单引号优先。
+
+* build 构建线上代码时会禁用 alert 和 debugger，dev 模式下不禁止
+* 如果希望对规则进行更改，可调整 .eslintrc.js。 以允许使用分号为例：
+
+```
+'semi': 2 // 2 为 error，1 为 warning, 0 为不检测， 重启 npm 生效
+```
+
+* 希望跳过部分文件检测，可配置 .eslintignore, 语法和 .gitignore 一致
 
 ## Other
 

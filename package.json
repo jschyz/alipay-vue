@@ -1,8 +1,9 @@
 {
   "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --hot --inline --host 0.0.0.0 --config build/webpack.dev.conf.js",
     "build": "npm run clean && webpack --progress --config build/webpack.prod.conf.js",
     "clean": "shx rm -rf ./dist",
-    "start": "webpack-dev-server --hot --inline --host 0.0.0.0 --config build/webpack.dev.conf.js",
     "test": "karma start"
   },
   "dependencies": {
