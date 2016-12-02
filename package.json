@@ -1,10 +1,16 @@
 {
+  "name": "alipay-vue",
+  "version": "0.1.0",
+  "description": "蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template",
+  "author": "huihui",
+  "license": "MIT",
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --hot --inline --host 0.0.0.0 --config build/webpack.dev.conf.js",
     "build": "npm run clean && webpack --progress --config build/webpack.prod.conf.js",
-    "clean": "shx rm -rf ./dist",
-    "test": "karma start"
+    "lint": "eslint --ext .js,.vue src .config .script test/*_spec.js",
+    "test": "karma start",
+    "clean": "shx rm -rf ./dist"
   },
   "dependencies": {
     "mint-ui": "^2.0.5",
