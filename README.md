@@ -1,7 +1,7 @@
 alipay vue
 ========
 
-> 蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
+> (♥◠‿◠)ﾉ 蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
 
 运行部分截图
 
