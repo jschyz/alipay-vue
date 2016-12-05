@@ -53,6 +53,7 @@ module.exports = {
     moduleExtensions: ['-loader'],
   },
   module: {
+    noParse: /vue|vuex/,
     rules: [
       // https://github.com/vuejs/vue-loader/blob/master/docs/en/workflow/linting.md
       {
