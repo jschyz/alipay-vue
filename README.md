@@ -5,7 +5,7 @@ alipay vue
 
 运行部分截图
 
-![-1](https://cloud.githubusercontent.com/assets/3281438/20826073/677ee108-b8a3-11e6-9083-63d776107186.jpg)
+![-1](https://cloud.githubusercontent.com/assets/3281438/20875749/229daa5e-baf8-11e6-9639-070af8dae030.jpg)
 
 ## 使用方法
 
