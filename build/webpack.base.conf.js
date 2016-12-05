@@ -46,14 +46,15 @@ module.exports = {
     alias: {
       vue: path.resolve(nodeDir, 'vue/dist/vue.js'),
       vuex: path.resolve(nodeDir, 'vuex/dist/vuex.js')
-    }
+    },
+    // 只允许省略 js 后缀名
+    extensions: ['.js']
   },
   resolveLoader: {
     // https://webpack.js.org/configuration/resolve/#resolveloader-moduleextensions
     moduleExtensions: ['-loader'],
   },
   module: {
-    noParse: /vue|vuex/,
     rules: [
       // https://github.com/vuejs/vue-loader/blob/master/docs/en/workflow/linting.md
       {
@@ -64,7 +65,8 @@ module.exports = {
       },
       {
         test: /.vue$/,
-        loader: 'vue'
+        loader: 'vue',
+        exclude: /node_modules/
       },
       {
         test: /.js$/,
@@ -87,5 +89,8 @@ module.exports = {
         }
       }
     ]
+  },
+  externals: {
+    vue: 'Vue'
   }
 }

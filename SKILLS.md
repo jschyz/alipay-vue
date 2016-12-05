@@ -11,6 +11,8 @@ Webpack文档 [官网](https://webpack.js.org/) [中文](http://webpackdoc.com/)
 #### Webpack 性能优化
 - http://code.oneapm.com/javascript/2015/07/07/webpack_performance_1/
 
+- http://jafeney.com/2016/07/10/20160710-webpack/
+
 ### Babel
 
 Babel是下一代 JavaScript 语法的编译器。

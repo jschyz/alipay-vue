@@ -10,7 +10,7 @@ var htmlPlugin = []
 Object.keys(baseWebpackConfig.entry).forEach((key) => {
   htmlPlugin.push(
     new HtmlWebpackPlugin({
-      chunks: ['vendor', key],
+      chunks: [key],
       filename: `${key}.html`,
       template: path.join(config.rule.input, key, config.rule.template)
     })
@@ -18,11 +18,8 @@ Object.keys(baseWebpackConfig.entry).forEach((key) => {
 })
 
 module.exports = merge(baseWebpackConfig, {
-  entry: {
-    vendor: ['vue']
-  },
   output: {
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[chunkhash:8].js',
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({

@@ -5,6 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./config')
 const baseWebpackConfig = require('./webpack.base.conf')
 
+// add hot-reload related code to entry chunks
+// Object.keys(baseWebpackConfig.entry).forEach(function (name) {
+//   baseWebpackConfig.entry[name] = baseWebpackConfig.entry[name].concat(['webpack-hot-middleware/client'])
+// })
 
 var htmlPlugin = []
 // 多页面入口
@@ -22,12 +26,17 @@ module.exports = merge(baseWebpackConfig, {
   // eval-source-map is faster for development
   devtool: 'eval-source-map',
   devServer: {
-    historyApiFallback: true,
+    host: '0.0.0.0',
+    port: 8080,
+    compress: true,
     hot: true,
     inline: true,
     progress: true,
   },
   plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
       vue: {
         // use custom postcss plugins
