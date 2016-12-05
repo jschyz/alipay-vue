@@ -10,12 +10,13 @@ alipay vue
 ## 使用方法
 
 ```
-npm install
+yarn install
+建议使用 [yarn](https://yarnpkg.com/)
 ```
 
 ```
-npm run dev   # 开发模式
-npm run build # 构建文件
+yarn run dev   # 开发模式
+yarn run build # 构建文件
 ```
 npm run dev 会启动一个 http server,
 打开网址  http://127.0.0.1:8080/ 进行开发调试，浏览器会自动刷新
