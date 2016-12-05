@@ -3,7 +3,11 @@
     <list header="CSS Components">
       <list-item title="Tabbar" is-link to="/tabbar.html"></list-item>
       <list-item title="List" is-link to="/list.html"></list-item>
-      <list-item title="Flex" is-link to="/flex.html"></list-item>
+      <list-item title="Flex.css" is-link to="/flex.html"></list-item>
+    </list>
+
+    <list header="JS Components">
+      <list-item title="Mint-ui" is-link to="/mint-ui.html"></list-item>
     </list>
 
     <list header="Advanced">

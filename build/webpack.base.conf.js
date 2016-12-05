@@ -45,8 +45,7 @@ module.exports = {
   resolve: {
     alias: {
       vue: path.resolve(nodeDir, 'vue/dist/vue.js'),
-      vuex: path.resolve(nodeDir, 'vuex/dist/vuex.js'),
-      'mint-ui': path.resolve(nodeDir, 'vuex/src/index.js')
+      vuex: path.resolve(nodeDir, 'vuex/dist/vuex.js')
     }
   },
   resolveLoader: {
