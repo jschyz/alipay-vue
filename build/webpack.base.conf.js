@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const config = require('./config')
+const nodeDir = path.resolve(__dirname, '../node_modules')
 
 var entry = {}
 var htmlPlugin = []
@@ -41,9 +42,16 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
+  resolve: {
+    alias: {
+      vue: path.resolve(nodeDir, 'vue/dist/vue.js'),
+      vuex: path.resolve(nodeDir, 'vuex/dist/vuex.js'),
+      'mint-ui': path.resolve(nodeDir, 'vuex/src/index.js')
+    }
+  },
   resolveLoader: {
     // https://webpack.js.org/configuration/resolve/#resolveloader-moduleextensions
-    moduleExtensions: ['-loader']
+    moduleExtensions: ['-loader'],
   },
   module: {
     rules: [

@@ -11,17 +11,18 @@ import App from './App.vue'
  */
 
 /**
+ * inject global Css component
+ * for example:
+ *   import 'flex.css/dist/flex.css'
+ */
+
+/**
  * inject global Vue component
  * for example:
  *   Vue.use(component)
  *     Vue.use 会自动阻止注册相同插件多次，届时只会注册一次该插件。
  *   Vue.component(name, options)
  */
-import { Swipe, SwipeItem, Lazyload } from 'mint-ui'
-
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
-Vue.use(Lazyload)
 
 /**
  * 简易情况组件通信（数据状态管理）

@@ -8,6 +8,9 @@ Webpack是将许多松散的模块按照依赖和规则打包成符合生产环�
 
 Webpack文档 [官网](https://webpack.js.org/) [中文](http://webpackdoc.com/)
 
+#### Webpack 性能优化
+- http://code.oneapm.com/javascript/2015/07/07/webpack_performance_1/
+
 ### Babel
 
 Babel是下一代 JavaScript 语法的编译器。

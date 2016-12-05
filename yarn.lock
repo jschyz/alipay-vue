@@ -2101,6 +2101,10 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+flex.css:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/flex.css/-/flex.css-1.1.6.tgz#f1f5010913b6c0fcee0d844bffae365c8e0373b9"
+
 for-in@^0.1.5:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.6.tgz#c9f96e89bfad18a545af5ec3ed352a1d9e5b4dc8"
