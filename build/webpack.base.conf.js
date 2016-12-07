@@ -76,11 +76,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        // loader: 'style!css'
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader'
-        })
+        loader: 'style!css'
+        // loader: ExtractTextPlugin.extract({
+        //   fallbackLoader: 'style-loader',
+        //   loader: 'css-loader'
+        // })
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
