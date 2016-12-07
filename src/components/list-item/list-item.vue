@@ -83,12 +83,13 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<!--
 /**
  * am-list
  * 样式详见：http://am-team.github.io/antui/docs/#List%20列表
  */
-
+-->
+<style lang="sass">
 .am-list:not([am-version]) .am-list-item .am-list-thumb:empty {
   margin-left: 0;
   margin-right: 0;

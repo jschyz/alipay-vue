@@ -28,11 +28,13 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<!--
 /**
  * am-tab
  * 样式详见：http://am-team.github.io/antui/docs/#Tab%20Bars%20标签栏
  */
+-->
+<style lang="sass">
 .am-tab:not([am-version]) .am-tab-item {
   display: -webkit-box;
   -webkit-box-orient: horizontal;

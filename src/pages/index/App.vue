@@ -51,5 +51,5 @@
   }
 </script>
 
-<style lang="sass">
-</style>
+<!-- 如果为空样式数据，建议不显示申明，提升构建速度 -->
+<!-- <style lang="sass"></style> -->

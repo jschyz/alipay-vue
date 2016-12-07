@@ -14,7 +14,7 @@ module.exports = {
     output  : 'dist/'
   },
   build: {
-    env: '"production"',
+    env: '"production"'
   },
   dev: {
     env: '"development"',

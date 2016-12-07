@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const config = require('./config')
 const nodeDir = path.resolve(__dirname, '../node_modules')
 
@@ -75,7 +76,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
+        // loader: 'style!css'
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader'
+        })
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,

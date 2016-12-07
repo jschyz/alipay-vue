@@ -36,9 +36,9 @@ export default {
 }
 </script>
 
-<style>
+<!--
 /**
  * am-tab
  * 样式详见：http://am-team.github.io/antui/docs/#Tab%20Bars%20标签栏
  */
-</style>
+-->

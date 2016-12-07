@@ -37,9 +37,9 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<!--
 /**
  * am-list
  * 样式详见：http://am-team.github.io/antui/docs/#List%20列表
  */
-</style>
+-->
