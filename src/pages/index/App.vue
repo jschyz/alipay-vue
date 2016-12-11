@@ -1,18 +1,18 @@
 <template>
   <div id="page-index">
     <list header="CSS Components">
-      <list-item title="Tabbar" is-link to="/tabbar.html"></list-item>
-      <list-item title="List" is-link to="/list.html"></list-item>
-      <list-item title="Flex.css" is-link to="/flex.html"></list-item>
+      <list-item title="Tabbar" is-link to="./tabbar.html"></list-item>
+      <list-item title="List" is-link to="./list.html"></list-item>
+      <list-item title="Flex.css" is-link to="./flex.html"></list-item>
     </list>
 
     <list header="JS Components">
-      <list-item title="Mint-ui" is-link to="/mint-ui.html"></list-item>
+      <list-item title="Mint-ui" is-link to="./mint-ui.html"></list-item>
     </list>
 
     <list header="Advanced">
-      <list-item title="Event Bus" value="组件通信" is-link to="/event-bus.html"></list-item>
-      <list-item title="Vuex" value="组件通信" is-link to="/vuex.html"></list-item>
+      <list-item title="Event Bus" value="组件通信" is-link to="./event-bus.html"></list-item>
+      <list-item title="Vuex" value="组件通信" is-link to="./vuex.html"></list-item>
     </list>
 
     <list header="Document">

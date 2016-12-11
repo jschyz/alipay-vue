@@ -15,15 +15,15 @@
       <list-item title="标题文字"></list-item>
       <list-item title="标题文字" value="说明文字"></list-item>
       <list-item title="标题文字" reddot></list-item>
-      <list-item title="标题文字" value="带链接" is-link to="/index.html"></list-item>
-      <list-item class="twoline" title="标题文字" label="描述信息" is-link to="/index.html"></list-item>
-      <list-item title="标题文字" value="icon是图片" is-link to="/index.html">
+      <list-item title="标题文字" value="带链接" is-link to="./index.html"></list-item>
+      <list-item class="twoline" title="标题文字" label="描述信息" is-link to="./index.html"></list-item>
+      <list-item title="标题文字" value="icon是图片" is-link to="./index.html">
         <img slot="icon" src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png">
       </list-item>
-      <list-item title="标题文字" is-link to="/index.html">
+      <list-item title="标题文字" is-link to="./index.html">
         <img slot="icon right" src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png">
       </list-item>
-      <list-item class="twoline" title="标题文字" label="辅助标签" is-link to="/index.html">
+      <list-item class="twoline" title="标题文字" label="辅助标签" is-link to="./index.html">
         <img slot="icon right" src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png">
       </list-item>
       <list-item class="twoline" title="标题文字">

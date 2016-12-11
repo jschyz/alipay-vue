@@ -41,7 +41,7 @@ module.exports = {
   output: {
     path: config.rule.output,
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: './'
   },
   resolve: {
     alias: {
