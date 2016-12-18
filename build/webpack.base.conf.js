@@ -1,9 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const merge = require('webpack-merge')
+const px2rem = require('postcss-px2rem')
+const autoprefixer = require('autoprefixer')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./config')
-const nodeDir = path.resolve(__dirname, '../node_modules')
 
 var entry = {}
 var htmlPlugin = []
@@ -17,12 +19,19 @@ fs.readdirSync(config.rule.input).forEach(folder => {
   // 过滤 .DS_Store 非目录文件
   if (!fs.statSync(dirpath).isDirectory()) return
 
-  // 同时必须满足 index.html 跟 main.js 文件
+  // 同时必须满足 index.html 跟 entry.js 文件
   if (!(fs.existsSync(template) &&
     fs.existsSync(script))) {
     invalidEntry.push(folder)   // 收集无效路劲
   } else {
     entry[folder] = script      // 多脚本入口
+    htmlPlugin.push(
+      new HtmlWebpackPlugin({
+        chunks: [folder],
+        filename: `${folder}.html`,
+        template: path.join(config.rule.input, folder, config.rule.template)
+      })
+    )
   }
 })
 
@@ -30,7 +39,7 @@ fs.readdirSync(config.rule.input).forEach(folder => {
 if (invalidEntry.length) {
   console.log(
     '  Tip:\n' +
-    '  下列目录必须包含 index.html、main.js 文件\n  ' +
+    '  下列目录必须包含 index.entry.js 文件\n  ' +
     invalidEntry.join(`\n  `) +
     '\n'
   )
@@ -44,20 +53,20 @@ module.exports = {
     publicPath: './'
   },
   resolve: {
+    extensions: ['.js'],
     alias: {
-      vue: path.resolve(nodeDir, 'vue/dist/vue.js'),
-      vuex: path.resolve(nodeDir, 'vuex/dist/vuex.js')
-    },
-    // 只允许省略 js 后缀名
-    extensions: ['.js']
+      'vue': 'vue/dist/vue.js',
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'components': path.resolve(__dirname, '../src/components'),
+      'pages': path.resolve(__dirname, '../src/pages'),
+      'units': path.resolve(__dirname, '../src/units')
+    }
   },
   resolveLoader: {
-    // https://webpack.js.org/configuration/resolve/#resolveloader-moduleextensions
     moduleExtensions: ['-loader'],
   },
   module: {
     rules: [
-      // https://github.com/vuejs/vue-loader/blob/master/docs/en/workflow/linting.md
       {
         enforce: 'pre',
         test: /.(vue|js)$/,
@@ -67,7 +76,16 @@ module.exports = {
       {
         test: /.vue$/,
         loader: 'vue',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        options: {
+          postcss: [
+            autoprefixer({ browsers: ['last 7 versions'] }),
+            // 建议不开启
+            // px2rem({
+            //   remUnit: 75
+            // })
+          ]
+        }
       },
       {
         test: /.js$/,
@@ -75,27 +93,27 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        loader: 'style!css'
-        // loader: ExtractTextPlugin.extract({
-        //   fallbackLoader: 'style-loader',
-        //   loader: 'css-loader'
-        // })
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file'
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file',
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url',
         query: {
-          name: '[name].[ext]?[hash]'
+          limit: 1,
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url',
+        query: {
+          limit: 1,
+          name: 'fonts/[name].[hash:7].[ext]'
         }
       }
     ]
   },
   externals: {
     vue: 'Vue'
-  }
+  },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+  ].concat(htmlPlugin)
 }

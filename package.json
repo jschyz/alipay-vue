@@ -1,13 +1,13 @@
 {
   "name": "alipay-vue",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template",
   "author": "huihui",
   "license": "MIT",
   "scripts": {
-    "server": "http-server ./dist -p 8989",
     "start": "npm run dev",
-    "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
+    "server": "http-server ./dist -p 8989",
+    "dev": "node build/server",
     "build": "npm run clean && webpack --progress --config build/webpack.prod.conf.js",
     "lint": "eslint --ext .js,.vue src .config .script test/*_spec.js",
     "test": "karma start",
@@ -16,6 +16,7 @@
   "dependencies": {
     "flex.css": "^1.1.6",
     "mint-ui": "^2.0.5",
+    "node-sass": "^4.0.0",
     "vue": "^2.1.4",
     "vuex": "^2.0.0"
   },
@@ -29,6 +30,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-3": "^6.17.0",
     "chai": "^3.5.0",
+    "chalk": "^1.1.3",
     "css-loader": "^0.26.0",
     "eslint": "^3.10.2",
     "eslint-config-standard": "^6.2.1",
@@ -39,6 +41,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
     "html-webpack-plugin": "^2.24.1",
+    "http-proxy-middleware": "^0.17.3",
     "http-server": "^0.9.0",
     "karma": "^1.3.0",
     "karma-chai": "^0.1.0",
@@ -46,14 +49,16 @@
     "karma-mocha-reporter": "^2.2.1",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.2.0",
-    "node-sass": "^3.13.0",
+    "postcss-px2rem": "^0.3.0",
     "sass-loader": "^4.0.2",
     "shx": "^0.2.1",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "vue-loader": "^10.0.1",
     "vue-template-compiler": "^2.1.3",
     "webpack": "2.1.0-beta.27",
     "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.13.2",
     "webpack-merge": "^0.18.0"
   }
 }
