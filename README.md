@@ -1,7 +1,7 @@
 alipay vue
 ========
 
-> (♥◠‿◠)ﾉ 蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
+> 蚂蚁金服小程序(alipay hybrid) 基于 vuejs 的 template
 
 运行部分截图
 
@@ -15,11 +15,11 @@ yarn install
 ```
 
 ```
-yarn run dev   # 开发模式
+yarn run start # 开发模式
 yarn run build # 构建文件
 ```
-npm run dev 会启动一个 http server,
-打开网址  http://127.0.0.1:8080/ 进行开发调试，浏览器会自动刷新
+npm run start 会启动一个 http server,
+打开网址  http://127.0.0.1:8989/ 进行开发调试，浏览器会自动刷新
 
 ## Promise
 
