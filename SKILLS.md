@@ -6,7 +6,7 @@ Webpack是将许多松散的模块按照依赖和规则打包成符合生产环�
 
 基于vue功能齐全的脚手架[Vue-templates](https://github.com/vuejs-templates/webpack)
 
-Webpack文档 [官网](https://webpack.js.org/) [中文](http://webpackdoc.com/)
+Webpack文档 [官网](https://webpack.js.org/) [中文](https://webpack.vuefe.cn/index/)
 
 #### Webpack 性能优化
 - http://code.oneapm.com/javascript/2015/07/07/webpack_performance_1/
