@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import 'utils/devtools'
 
 Vue.filter('currency', (value, currency, decimals) => {
   value = parseFloat(value)

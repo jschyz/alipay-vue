@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import 'utils/devtools'
 
 /**
  * 简易情况组件通信（数据状态管理）

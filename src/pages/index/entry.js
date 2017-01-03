@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import 'utils/devtools.js'
 
 /**
  * inject global Vue filter or directive
