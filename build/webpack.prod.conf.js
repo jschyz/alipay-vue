@@ -30,6 +30,9 @@ module.exports = merge(baseWebpackConfig, {
         warnings: false
       }
     }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    }),
     new ExtractTextPlugin('css/[name]-[contenthash:7].css')
   ]
 })
