@@ -23,7 +23,7 @@ npm run start 会启动一个 http server,
 
 ## Promise
 
-* [小程序介绍](https://myapp.alipay.com/hybrid/app_meta_rules.html)
+* [小程序介绍](https://myapp.alipay.com/hybrid/app_meta_rules.html) 需要对接阿里内部，登录授权后才能访问
 * `npm start` 用来开启server，必须为`8989`端口
 * `npm run build` 用来构建，构建后文件放在`dist`目录下
 * 依赖 `Webpack2` `Vue2`
