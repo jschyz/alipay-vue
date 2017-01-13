@@ -2,8 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const px2rem = require('postcss-px2rem')
-const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./config')
 
@@ -72,20 +70,6 @@ module.exports = {
         test: /.(vue|js)$/,
         loader: 'eslint',
         exclude: /node_modules/
-      },
-      {
-        test: /.vue$/,
-        loader: 'vue',
-        exclude: /node_modules/,
-        options: {
-          postcss: [
-            autoprefixer({ browsers: ['last 7 versions'] }),
-            // 建议不开启
-            // px2rem({
-            //   remUnit: 75
-            // })
-          ]
-        }
       },
       {
         test: /.js$/,
