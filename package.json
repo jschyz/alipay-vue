@@ -17,7 +17,6 @@
   "dependencies": {
     "flex.css": "^1.1.6",
     "mint-ui": "^2.0.5",
-    "node-sass": "^4.0.0",
     "vue": "^2.1.4",
     "vuex": "^2.0.0"
   },
@@ -41,6 +40,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "file-loader": "^0.10.0",
     "html-webpack-plugin": "^2.24.1",
     "http-proxy-middleware": "^0.17.3",
     "http-server": "^0.9.0",
@@ -50,6 +50,7 @@
     "karma-mocha-reporter": "^2.2.1",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.2.0",
+    "node-sass": "^4.0.0",
     "postcss-px2rem": "^0.3.0",
     "sass-loader": "^4.0.2",
     "shx": "^0.2.1",
@@ -57,7 +58,7 @@
     "url-loader": "^0.5.7",
     "vue-loader": "^10.0.1",
     "vue-template-compiler": "^2.1.3",
-    "webpack": "2.1.0-beta.27",
+    "webpack": "2.2.1",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-merge": "^0.18.0"
