@@ -24,8 +24,8 @@ module.exports = merge(baseWebpackConfig, {
             })
           },
           postcss: [
-            autoprefixer({ browsers: ['last 7 versions'] }),
-            // px2rem({
+            autoprefixer({ browsers: ['last 7 versions'] })
+            // ,px2rem({
             //   remUnit: 75
             // })
           ]

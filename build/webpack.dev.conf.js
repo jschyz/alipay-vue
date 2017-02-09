@@ -19,10 +19,10 @@ module.exports = merge(baseWebpackConfig, {
         exclude: /node_modules/,
         options: {
           postcss: [
-            autoprefixer({ browsers: ['last 7 versions'] }),
-            px2rem({
-              remUnit: 75
-            })
+            autoprefixer({ browsers: ['last 7 versions'] })
+            // ,px2rem({
+            //   remUnit: 75
+            // })
           ]
         }
       },
